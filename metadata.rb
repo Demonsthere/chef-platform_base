@@ -1,0 +1,11 @@
+name 'platform_base'
+maintainer 'Jakub Błaszczyk'
+maintainer_email 'jakub.blaszczyk@sap.com'
+license 'all_rights'
+description 'Installs/Configures chef-platform_base'
+long_description 'Installs/Configures chef-platform_base'
+version '0.1.0'
+
+depends 'apt'
+depends 'ohai'
+depends 'git'

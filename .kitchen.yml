@@ -1,0 +1,17 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: debian8_local
+    driver:
+        box: debian8_local
+
+suites:
+  - name: default
+    run_list:
+      - recipe[platform_base::default]
+    attributes:
