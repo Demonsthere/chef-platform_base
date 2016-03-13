@@ -16,6 +16,7 @@ include_recipe 'platform_base::lsb'
 include_recipe 'platform_base::bashrc'
 include_recipe 'platform_base::java'
 include_recipe 'git'
+include_recipe 'platform_base::groups'
 
 node['platform_base']['packages'].each do |pkg|
   package pkg
