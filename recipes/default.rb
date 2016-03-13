@@ -29,3 +29,7 @@ bash 'set_editor_nano_root' do
   EOF
   not_if 'grep \'EDITOR=nano\' /root/.bashrc', 'user' => 'root'
 end
+
+execute 'set-bash-shell' do
+  command 'sudo update-alternatives --install /bin/sh sh /bin/bash 300'
+end

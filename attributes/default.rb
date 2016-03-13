@@ -4,3 +4,4 @@ default['platform_base']['java']['versions'] = [
   { 'version' => '8', 'pkg' => 'openjdk-8-jdk' }
 ]
 default['platform_base']['java']['defaultversion'] = '8'
+default['platform_base']['docker']['users'] = %w(vagrant)

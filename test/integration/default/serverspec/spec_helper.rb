@@ -20,4 +20,3 @@ path = ENV['PATH'].split(':')
   !path.include?(dir) && path.insert(0, dir)
 end
 ENV['PATH'] = path.join(':')
-
