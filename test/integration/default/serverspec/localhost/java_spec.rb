@@ -4,17 +4,9 @@ require_relative '../spec_helper'
 # open jvm setup
 # ----------------------------
 
-versions = {
-  '7' => 'openjdk-7-jdk',
-  '8' => 'openjdk-8-jdk'
-}
-default = '8'
+default = '7'
 
-describe package('java-common') do
-  it { should be_installed }
-end
-
-versions.each do |_version, pkg|
+['openjdk-7-jdk', 'java-common'].each do |pkg|
   describe package(pkg) do
     it { should be_installed }
   end

@@ -1,0 +1,6 @@
+# deb cdrom:[Debian GNU/Linux 8.3.0 _Jessie_ - Official amd64 NETINST Binary-1 20160123-18:59]/ unstable main
+
+#deb cdrom:[Debian GNU/Linux 8.3.0 _Jessie_ - Official amd64 NETINST Binary-1 20160123-18:59]/ unstable main
+
+deb http://ftp.pl.debian.org/debian unstable main
+deb-src http://ftp.pl.debian.org/debian unstable main
