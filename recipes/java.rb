@@ -3,7 +3,7 @@ apt_package 'java-common'
 apt_package node['platform_base']['java']['binary'] do
   timeout 3000
   options '--allow-unauthenticated -o APT::Force-LoopBreak=yes'
-  # default_release 'jessie' if node[:platform] == 'debian'
+  default_release 'jessie' if node[:platform] == 'debian'
 end
 
 jdk_dir = "java-#{node['platform_base']['java']['version']}-openjdk-amd64"
