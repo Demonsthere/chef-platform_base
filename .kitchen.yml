@@ -1,6 +1,8 @@
 ---
 driver:
   name: vagrant
+  customize:
+    nictype1: 'virtio'
 
 provisioner:
   name: chef_zero
@@ -9,6 +11,7 @@ platforms:
   - name: debian8_local
     driver:
         box: debian8_local
+  - name: ubuntu/xenial64
 
 suites:
   - name: default

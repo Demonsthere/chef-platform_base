@@ -4,9 +4,14 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 #
-include_recipe 'platform_base::apt_config'
+if node[:platform] == 'debian'
+  include_recipe 'platform_base::apt_config'
+else
+  log 'Ubuntu detected. Not touching source lists.'
+end
 
 include_recipe 'apt'
+
 execute 'update sources' do
   command 'apt-get update'
   action :run
@@ -16,19 +21,25 @@ include_recipe 'platform_base::lsb'
 include_recipe 'platform_base::bashrc'
 include_recipe 'platform_base::java'
 include_recipe 'git'
-include_recipe 'platform_base::groups'
 
-node['platform_base']['packages'].each do |pkg|
-  package pkg
+node[:platform_base][:packages].each do |pkg|
+  package pkg do
+    action :upgrade
+  end
 end
 
-bash 'set_editor_nano_root' do
+include_recipe 'platform_base::groups'
+
+script 'Reset old docker connections' do
+  interpreter 'bash'
   user 'root'
-  cwd '/root'
-  code <<-EOF
-  echo 'export EDITOR=nano' >> .bashrc
-  EOF
-  not_if 'grep \'EDITOR=nano\' /root/.bashrc', 'user' => 'root'
+  only_if { node[:platform] == 'debian' }
+  code <<-EOH
+    service docker stop
+    systemctl unmask docker.service
+    systemctl unmask docker.socket
+    service docker restart
+  EOH
 end
 
 execute 'set-bash-shell' do
