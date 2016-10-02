@@ -10,8 +10,8 @@ provisioner:
 platforms:
   - name: debian8_local
     driver:
-        box: debian8_local
-  - name: ubuntu/xenial64
+      box: debian8_local
+  - name: ubuntu/trusty64
 
 suites:
   - name: default

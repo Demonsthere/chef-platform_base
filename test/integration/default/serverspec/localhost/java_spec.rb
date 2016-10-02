@@ -4,7 +4,7 @@ require_relative '../spec_helper'
 # open jvm setup
 # ----------------------------
 
-default = '8'
+default = '7'
 
 ["openjdk-#{default}-jdk", 'java-common'].each do |pkg|
   describe package(pkg) do
