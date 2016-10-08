@@ -11,6 +11,7 @@ platforms:
   - name: debian8_local
     driver:
       box: debian8_local
+      box_url: "http://apache.pitux.ovh/data/vagrant/debian-8.2_chef-11.16.4-1.box"
   - name: ubuntu/trusty64
 
 suites:
