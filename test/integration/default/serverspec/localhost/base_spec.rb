@@ -4,7 +4,7 @@ require_relative '../spec_helper'
 # base specs
 # ----------------------------#
 
-pkgs = %w(less htop vim mc curl zip unzip ncdu telnet rsync netcat-openbsd net-tools screen git lsb-release)
+pkgs = %w(less htop vim mc curl zip unzip ncdu telnet rsync netcat-openbsd net-tools screen git lsb-release docker-engine)
 users = %w(vagrant)
 
 pkgs.each do |pkg|
