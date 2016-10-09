@@ -17,4 +17,4 @@ bin/*
 .kitchen.local.yml
 
 # Keep rubocop definition
-!.rubocop.ym
+!.rubocop.yml

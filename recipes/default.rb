@@ -28,18 +28,8 @@ include_recipe 'platform_base::docker'
 
 include_recipe 'platform_base::groups'
 
-# script 'Reset old docker connections' do
-#   interpreter 'bash'
-#   user 'root'
-#   only_if { node[:platform] == 'debian' }
-#   code <<-EOH
-#     service docker stop
-#     systemctl unmask docker.service
-#     systemctl unmask docker.socket
-#     service docker restart
-#   EOH
-# end
-
 execute 'set-bash-shell' do
   command 'sudo update-alternatives --install /bin/sh sh /bin/bash 300'
 end
+
+include_recipe 'platform_base::cleanup'

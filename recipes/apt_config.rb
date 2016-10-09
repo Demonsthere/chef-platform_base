@@ -1,6 +1,11 @@
 execute 'Remove current source lists' do
-  command 'rm -f sources.list sources.list~ sources.list.d/webupd8team-java.list'
+  command 'rm -f sources.list sources.list~'
   cwd '/etc/apt'
+  action :run
+end
+
+execute 'Deleting apt preferences ... ' do
+  command 'find /etc/apt/sources.list.d/ -type f -delete'
   action :run
 end
 

@@ -13,6 +13,10 @@ pkgs.each do |pkg|
   end
 end
 
+describe package('libgnutls-deb0-28') do
+  it { should_not be_installed }
+end
+
 describe process('docker') do
   it { should be_running }
 end
