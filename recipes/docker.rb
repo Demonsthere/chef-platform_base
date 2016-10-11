@@ -11,11 +11,11 @@ execute 'Add docker key' do
   action :run
 end
 
-cookbook_file 'docker.list' do
-  path '/etc/apt/sources.list.d/docker.list'
-  mode '0644'
+template '/etc/apt/sources.list.d/docker.list' do
+  source 'docker.list.erb'
   owner 'root'
   group 'root'
+  mode '0644'
   action :create_if_missing
 end
 

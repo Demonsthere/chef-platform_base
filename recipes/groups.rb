@@ -1,4 +1,4 @@
 group 'docker' do
-  action :create
+  action :manage
   members node[:platform_base][:docker][:users]
 end
