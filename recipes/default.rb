@@ -26,10 +26,6 @@ node[:platform_base][:packages].each do |pkg|
   end
 end
 
-include_recipe 'platform_base::docker'
-
-include_recipe 'platform_base::groups'
-
 execute 'set-bash-shell' do
   command 'sudo update-alternatives --install /bin/sh sh /bin/bash 300'
 end
