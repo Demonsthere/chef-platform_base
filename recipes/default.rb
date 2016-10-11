@@ -4,7 +4,9 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 #
-include_recipe 'platform_base::apt_config'
+if node[:platform_base][:sources_set]
+  include_recipe 'platform_base::apt_config'
+end
 
 include_recipe 'apt'
 
